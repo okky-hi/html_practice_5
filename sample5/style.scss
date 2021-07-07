@@ -31,8 +31,8 @@ $font-size-text: $font-size-s;
 @mixin title {
     font-size: $font-size-title;
     font-weight: bold;
-    line-height: 27px;
-    border-bottom: 1px solid $text-color;
+    border-bottom: 3px solid $text-color;
+    padding-bottom: 27px;
     display: inline-block;
 }
 
@@ -96,6 +96,57 @@ body {
 
     &__btn {
         @include btn;
+    }
+}
+
+
+/*----- outline -----*/
+
+.outline {
+    background-image: url(img/bg.gif);
+    background-repeat: repeat;
+    text-align: center;
+    padding: 64px 0 60px;
+
+    &__title {
+        @include title;
+        margin-bottom: 100px;
+    }
+
+    &__inner {
+        @include wrapper;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__item {
+        width: 45%;
+        padding: 53px 61px 63px;
+        background-color: $background-color-primary;
+        border-radius: 20px;
+        margin-bottom: 32px;
+    }
+
+    &__heading {
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        margin-bottom: 33px;
+    }
+
+    &__subheading {
+        font-size: 18px;
+        display: block;
+        letter-spacing: 3px;
+        padding-top: 24px
+    }
+
+    &__text {
+        text-align: justify
     }
 }
 
