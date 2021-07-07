@@ -84,3 +84,38 @@ body {
         @include btn;
     }
 }
+
+
+/*----- footer -----*/
+
+.footer {
+    background-color: $palette-grey;
+    padding: 60px 0 20px;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        width: 860px;
+        margin: 0 auto;
+        font-size: $font-size-text;
+    }
+
+    &__menu {
+        margin-bottom: 65px;
+    }
+
+    &__title {
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    &__item {
+        margin-bottom: 8px;
+    }
+
+    &__copyright {
+        text-align: center;
+        font-size: 10px;
+    }
+
+}
