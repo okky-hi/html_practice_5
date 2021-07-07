@@ -4,13 +4,14 @@ $palette-white: #FFFFFF;
 $palette-grey: #E8E8E8;
 $palette-red: #FF2A2A;
 $palette-accent-red: #FF0133;
+$palette-deep-red: #7A051C;
 
 $background-color-primary: $palette-white;
 $background-color-secondary: $palette-red;
 $text-color: $palette-black;
 $text-color-white: $palette-white;
 $btn-color: $palette-accent-red;
-
+$btn-shadow: $palette-deep-red;
 
 /*フォントサイズ*/
 $font-size-m: 36px;
@@ -21,6 +22,19 @@ $font-size-text: $font-size-s;
 
 
 /*mixin*/
+@mixin wrapper {
+    max-width: 860px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@mixin title {
+    font-size: $font-size-title;
+    font-weight: bold;
+    line-height: 27px;
+    border-bottom: 1px solid $text-color;
+    display: inline-block;
+}
 
 @mixin btn {
     padding: 17px 47px;
