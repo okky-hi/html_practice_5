@@ -1,1 +1,20 @@
-/*intro*/
+/*カラーパレット*/
+$palette-black: #333333;
+$palette-white: #FFFFFF;
+$palette-grey: #E8E8E8;
+$palette-red: #FF2A2A;
+$palette-accent-red: #FF0133;
+
+$background-color-primary: $palette-white;
+$background-color-secondary: $palette-red;
+$text-color: $palette-black;
+$text-color-white: $palette-white;
+$btn-color: $palette-accent-red;
+
+
+/*フォントサイズ*/
+$font-size-m: 36px;
+$font-size-s: 16px;
+
+$font-size-title: $font-size-m;
+$font-size-text: $font-size-s;
