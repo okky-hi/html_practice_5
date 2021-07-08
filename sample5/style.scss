@@ -29,6 +29,7 @@ $font-size-text: $font-size-s;
 @mixin wrapper {
     max-width: 860px;
     width: 100%;
+    padding: 0 10px;
     margin: 0 auto;
 }
 
@@ -459,10 +460,9 @@ body {
     padding: 60px 0 20px;
 
     &__unit {
+        @include wrapper;
         display: flex;
         justify-content: space-between;
-        width: 860px;
-        margin: 0 auto;
         font-size: $font-size-text;
     }
 
