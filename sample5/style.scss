@@ -526,6 +526,21 @@ body {
     background-repeat: repeat;
     text-align: center;
     padding: 64px 0 60px;
+    animation-name: loop;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+
+    @keyframes loop {
+        0% {
+            background-position: 0 0;
+        }
+
+        /*画像サイズが700×700。10秒かけてbackground-positionを移動させる*/
+        100% {
+            background-position: -700px 700px;
+        }
+    }
 
     &__title {
         @include title;
