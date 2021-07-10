@@ -278,6 +278,21 @@ body {
         align-items: center;
         padding: 70px 0;
         margin-bottom: 40px;
+        animation-name: fadeinLeft;
+        animation-duration: 1s;
+
+        @keyframes fadeinLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
 
         &__img {
             width: auto;
@@ -311,6 +326,20 @@ body {
         align-items: center;
         padding: 70px 0;
         margin: 0 0 0 auto;
+        animation-name: fadeinRight;
+        animation-duration: 1s;
+
+        @keyframes fadeinRight {
+            0% {
+                opacity: 0;
+                transform: translateX(50%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
         &__img {
             width: auto;
