@@ -699,6 +699,7 @@ body {
 
     /*----- header -----*/
     .header {
+        padding: 10px 10px;
         &__menu {
             display: none;
         }
@@ -756,6 +757,10 @@ body {
                     transform: translateX(0);
                 }
             }
+
+            &__heading {
+                font-size: 24px;
+            }
         }
 
         .reasonRight {
@@ -771,6 +776,10 @@ body {
                     opacity: 1;
                     transform: translateX(0);
                 }
+            }
+
+            &__heading {
+                font-size: 24px;
             }
         }
     }
@@ -876,8 +885,27 @@ body {
         &__item {
             width: 100%;
         }
+
+        &__heading {
+            font-size: 24px;
+        }
     }
 
+
+    /*----- application -----*/
+    .application {
+        &__heading {
+            font-size: 24px;
+        }
+
+        &__text {
+            font-size: 16px;
+        }
+
+        &__btn {
+            font-size: 24px;
+        }
+    }
 
     /*----- footer -----*/
 

@@ -819,6 +819,9 @@ body {
 /*----- メディアクエリ -----*/
 @media screen and (max-width: 960px) {
   /*----- header -----*/
+  .header {
+    padding: 10px 10px;
+  }
   .header__menu {
     display: none;
   }
@@ -882,6 +885,9 @@ body {
               transform: translateX(0);
     }
   }
+  .reason .reasonLeft__heading {
+    font-size: 24px;
+  }
   .reason .reasonRight {
     width: 90%;
   }
@@ -896,6 +902,9 @@ body {
       -webkit-transform: translateX(0);
               transform: translateX(0);
     }
+  }
+  .reason .reasonRight__heading {
+    font-size: 24px;
   }
   /*----- studentVoice -----*/
   .studentVoice__title {
@@ -994,6 +1003,19 @@ body {
   }
   .outline__item {
     width: 100%;
+  }
+  .outline__heading {
+    font-size: 24px;
+  }
+  /*----- application -----*/
+  .application__heading {
+    font-size: 24px;
+  }
+  .application__text {
+    font-size: 16px;
+  }
+  .application__btn {
+    font-size: 24px;
   }
   /*----- footer -----*/
   .footer {
