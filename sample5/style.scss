@@ -380,6 +380,21 @@ body {
         justify-content: flex-start;
         align-items: center;
         margin-bottom: 80px;
+        animation-name: fadein;
+        animation-duration: 1s;
+
+        @keyframes fadein {
+            0% {
+                opacity: 0;
+                transform: scale(0.1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
 
         &__unit {
             margin-right: 25px;
@@ -427,6 +442,21 @@ body {
         align-items: center;
         justify-content: flex-end;
         margin-bottom: 80px;
+        animation-name: fadein;
+        animation-duration: 1s;
+
+        @keyframes fadein {
+            0% {
+                opacity: 0;
+                transform: scale(0.1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
 
         &__unit {
             margin-left: 25px;
@@ -473,6 +503,21 @@ body {
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        animation-name: fadein;
+        animation-duration: 1s;
+
+        @keyframes fadein {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
 
         &__unit {
             margin-right: 25px;
