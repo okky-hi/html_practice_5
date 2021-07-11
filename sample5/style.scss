@@ -1,1 +1,928 @@
-/*intro*/
+/*カラーパレット*/
+$palette-black: #333333;
+$palette-white: #FFFFFF;
+$palette-grey: #E8E8E8;
+$palette-dark-grey: #CCCCCC;
+$palette-red: #FF2A2A;
+$palette-accent-red: #FF0133;
+$palette-deep-red: #7A051C;
+$palette-light-blue: #E9F1FB;
+
+$background-color-primary: $palette-white;
+$background-color-secondary: $palette-red;
+$text-color: $palette-black;
+$text-color-white: $palette-white;
+$btn-color: $palette-accent-red;
+$btn-shadow: $palette-deep-red;
+$balloon-color: $palette-light-blue;
+$icon-color: $palette-dark-grey;
+
+/*フォントサイズ*/
+$font-size-m: 36px;
+$font-size-s: 16px;
+
+$font-size-title: $font-size-m;
+$font-size-text: $font-size-s;
+
+
+/*mixin*/
+@mixin wrapper {
+    max-width: 860px;
+    width: 100%;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+@mixin title {
+    font-size: $font-size-title;
+    font-weight: bold;
+    border-bottom: 3px solid $text-color;
+    padding-bottom: 27px;
+    display: inline-block;
+}
+
+@mixin btn {
+    padding: 17px 47px;
+    color: $text-color-white;
+    background-color: $btn-color;
+    border: 1px solid $btn-color;
+    border-radius: 50px;
+    transition: 0.5s;
+    &:hover {
+        background-color: $background-color-primary;
+        color: $btn-color;
+    }
+}
+
+
+/*----- body -----*/
+
+body {
+    font-family: sans-serif,"游ゴシック";
+    padding-top: 150px;
+}
+
+
+/*----- header -----*/
+
+.header {
+    padding: 40px 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color:$background-color-primary;
+
+    &__logo {
+        width: 100px;
+    }
+
+    &__img {
+        max-width: 100%;
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        font-size: $font-size-s;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        font-weight: bold;
+        margin-right: 40px;
+    }
+
+    &__btn {
+        @include btn;
+    }
+}
+
+
+/*----- mainVisual -----*/
+
+.mainVisual {
+    height: 720px;
+    margin-bottom: 124px;
+    position: relative;
+
+
+    &__imgUnit {
+        margin: 0 auto;
+        padding: 0 auto;
+        text-align: center;
+    }
+
+    &__item {
+        width: 70%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        /*繰り返し*/
+        animation-iteration-count: infinite;
+        /*周期*/
+        animation-duration: 15s;
+
+        /*ぼかし*/
+        &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            box-shadow: inset 0 0 15px 20px $background-color-primary;
+        }
+
+        /*アニメーションの開始時間*/
+        &:nth-child(1) {
+            animation-name: slide;
+            /*1秒前に開始
+            非表示の時間を無くすため*/
+            animation-delay: -1s;
+        }
+
+        &:nth-child(2) {
+            animation-name: slide;
+            /*４秒後に開始
+            １枚目が1秒前倒した分5-1=4秒からスタート*/
+            animation-delay: 4s;
+            opacity: 0;
+        }
+
+        &:nth-child(3) {
+            animation-name: slide;
+            /*9秒後に開始*/
+            animation-delay: 9s;
+            opacity: 0;
+        }
+
+        /*フェードイン、フェードアウト*/
+        @keyframes slide {
+            /*非表示状態からフェードイン開始*/
+            0% {
+                opacity: 0;
+            }
+
+            /*2秒後までにフェードイン完了し、完全表示*/
+            13% {
+                opacity: 1;
+            }
+
+            /*5秒後まで完全表示を維持。その後フェードアウト*/
+            33% {
+                opacity: 1;
+            }
+
+            /*2秒かけて(7秒後までに)フェードアウト完了し、非表示*/
+            46% {
+                opacity: 0;
+            }
+
+            /*非表示を維持し終了*/
+            100% {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 720px;
+        object-fit: cover;
+        object-position: 0 0;
+    }
+
+    &__unit {
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%,-50%);
+    }
+
+    &__title {
+        font-size: 46px;
+        font-weight: bold;
+        line-height: 73px;
+        letter-spacing: 5px;
+        margin-bottom: 33px;
+        filter: drop-shadow(5px 5px 5px rgb(255, 255, 255));
+    }
+
+    &__btn {
+        position: relative;
+        font-size: 24px;
+        padding: 18px 0;
+        text-align: center;
+        color: $text-color-white;
+        background-color: $btn-color;
+        border: 1px solid $btn-color;
+        border-radius: 10px;
+        box-shadow: 0 4px $btn-shadow;
+        display: block;
+        transition: 0.5s;
+
+        /*矢印の作成*/
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            left: 90%;
+            width: 24px;
+            height: 24px;
+            border-top: 3px solid $background-color-primary;
+            border-right: 3px solid $background-color-primary;
+            border-bottom: 3px solid transparent;
+            border-left: 3px solid transparent;
+            transform: rotate(45deg);
+        }
+
+        &:hover {
+            transform: scale(1.1, 1.1);
+        }
+    }
+}
+
+/*----- reason -----*/
+
+.reason {
+    text-align: center;
+
+    &__title {
+        @include title;
+        margin-bottom: 107px;
+    }
+
+    &__unit {
+        background-color: $background-color-secondary;
+        padding: 80px 0;
+    }
+
+    .reasonLeft {
+        width: 50%;
+        position: relative;
+        background-color: $background-color-primary;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 70px 0;
+        margin-bottom: 40px;
+        animation-name: fadeinLeft;
+        animation-duration: 1s;
+
+        @keyframes fadeinLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+        &__img {
+            width: auto;
+            height: 60px;
+        }
+
+        &__unit {
+            text-align: left;
+            margin-left: 30px;
+        }
+
+        &__heading {
+            font-size: 28px;
+            color: $background-color-secondary;
+            margin-bottom: 7px;
+        }
+
+        &__text {
+            font-size: 18px;
+        }
+    }
+
+    .reasonRight {
+        width: 50%;
+        position: relative;
+        background-color: $background-color-primary;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 70px 0;
+        margin: 0 0 0 auto;
+        animation-name: fadeinRight;
+        animation-duration: 1s;
+
+        @keyframes fadeinRight {
+            0% {
+                opacity: 0;
+                transform: translateX(50%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        &__img {
+            width: auto;
+            height: 60px;
+        }
+
+        &__unit {
+            text-align: left;
+            margin-left: 30px;
+        }
+
+        &__heading {
+            font-size: 28px;
+            color: $background-color-secondary;
+            margin-bottom: 7px;
+        }
+
+        &__text {
+            font-size: 18px;
+        }
+    }
+}
+
+
+/*----- studentVoice -----*/
+.studentVoice {
+    @include wrapper;
+    text-align: center;
+    padding-top: 124px;
+    padding-bottom: 140px;
+
+    &__title {
+        @include title;
+        margin-bottom: 107px;
+    }
+
+    .student1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 80px;
+        animation-name: fadein;
+        animation-duration: 1s;
+
+        @keyframes fadein {
+            0% {
+                opacity: 0;
+                transform: scale(0.1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+        &__unit {
+            margin-right: 25px;
+            width: 10%;
+        }
+
+        &__img {
+            background-color: $icon-color;
+            border-radius: 50%;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        &__name {
+            font-size: 12px;
+        }
+
+        &__text {
+            padding: 23px;
+            background-color: $balloon-color;
+            border-radius: 10px;
+            position: relative;
+            display: inline-block;
+            width: 60%;
+            text-align: justify;
+            letter-spacing: 1px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 0;
+                height: 0;
+                left: -15px;
+                top: 60%;
+                border-right: 15px solid $balloon-color;
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+            }
+        }
+    }
+
+    .student2 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 80px;
+        animation-name: fadein;
+        animation-duration: 1s;
+
+        @keyframes fadein {
+            0% {
+                opacity: 0;
+                transform: scale(0.1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+        &__unit {
+            margin-left: 25px;
+            width: 10%;
+        }
+
+        &__img {
+            background-color: $icon-color;
+            border-radius: 50%;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        &__name {
+            font-size: 12px;
+        }
+
+        &__text {
+            padding: 23px;
+            background-color: $balloon-color;
+            border-radius: 10px;
+            position: relative;
+            display: inline-block;
+            width: 60%;
+            text-align: justify;
+            letter-spacing: 1px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 0;
+                height: 0;
+                right: -15px;
+                top: 60%;
+                border-left: 15px solid $balloon-color;
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+            }
+        }
+    }
+
+    .student3 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        animation-name: fadein;
+        animation-duration: 1s;
+
+        @keyframes fadein {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+        &__unit {
+            margin-right: 25px;
+            width: 10%;
+        }
+
+        &__img {
+            background-color: $icon-color;
+            border-radius: 50%;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        &__name {
+            font-size: 12px;
+        }
+
+        &__text {
+            padding: 23px;
+            background-color: $balloon-color;
+            border-radius: 10px;
+            position: relative;
+            display: inline-block;
+            width: 60%;
+            text-align: justify;
+            letter-spacing: 1px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 0;
+                height: 0;
+                left: -15px;
+                top: 60%;
+                border-right: 15px solid $balloon-color;
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+            }
+        }
+    }
+}
+
+
+
+
+/*----- outline -----*/
+
+.outline {
+    background-image: url(img/bg.gif);
+    background-repeat: repeat;
+    text-align: center;
+    padding: 64px 0 60px;
+    animation-name: loop;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+
+    @keyframes loop {
+        0% {
+            background-position: 0 0;
+        }
+
+        /*画像サイズが700×700。10秒かけてbackground-positionを移動させる*/
+        100% {
+            background-position: -700px 700px;
+        }
+    }
+
+    &__title {
+        @include title;
+        margin-bottom: 100px;
+    }
+
+    &__inner {
+        @include wrapper;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__item {
+        width: 45%;
+        padding: 53px 61px 63px;
+        background-color: $background-color-primary;
+        border-radius: 20px;
+        margin-bottom: 32px;
+    }
+
+    &__heading {
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        margin-bottom: 33px;
+    }
+
+    &__subheading {
+        font-size: 18px;
+        display: block;
+        letter-spacing: 3px;
+        padding-top: 24px
+    }
+
+    &__text {
+        text-align: justify
+    }
+}
+
+
+/*----- application -----*/
+
+.application {
+    @include wrapper;
+    padding-top:  120px;
+    padding-bottom:  120px;
+    text-align: center;
+
+    &__heading {
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+    }
+
+    &__text {
+        font-size: 18px;
+        letter-spacing: 3px;
+        margin-bottom: 43px;
+    }
+
+    &__btn {
+        @include btn;
+        font-size: 28px;
+        display: block;
+    }
+}
+
+
+/*----- footer -----*/
+
+.footer {
+    background-color: $palette-grey;
+    padding: 60px 0 20px;
+
+    &__unit {
+        @include wrapper;
+        display: flex;
+        justify-content: space-between;
+        font-size: $font-size-text;
+    }
+
+    &__menu {
+        margin-bottom: 65px;
+    }
+
+    &__title {
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    &__item {
+        margin-bottom: 8px;
+    }
+
+    &__copyright {
+        text-align: center;
+        font-size: 10px;
+    }
+
+}
+
+
+/*----- メディアクエリ -----*/
+
+@media screen and (max-width:960px) {
+
+    body {
+        padding-top: 70px;
+    }
+
+
+    /*----- header -----*/
+    .header {
+        padding: 10px 10px;
+        &__menu {
+            display: none;
+        }
+    }
+
+
+    /*----- mainVisual -----*/
+    .mainVisual {
+        height: 470px;
+
+        &__item {
+            width: 100%;
+            height: 300px;
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 0;
+        }
+
+        &__unit {
+            @include wrapper;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        &__title {
+            font-size: 28px;
+            line-height: 42px;
+        }
+
+        &__btn {
+            width: 100%;
+        }
+
+    }
+
+    /*----- reason -----*/
+    .reason {
+        &__title {
+            font-size: 28px;
+        }
+        .reasonLeft {
+            width: 90%;
+
+            @keyframes fadeinLeft {
+                0% {
+                    opacity: 0;
+                    transform: translateX(-90%);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            &__heading {
+                font-size: 24px;
+            }
+        }
+
+        .reasonRight {
+            width: 90%;
+
+            @keyframes fadeinLeft {
+                0% {
+                    opacity: 0;
+                    transform: translateX(-90%);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            &__heading {
+                font-size: 24px;
+            }
+        }
+    }
+
+
+    /*----- studentVoice -----*/
+
+    .studentVoice {
+        &__title {
+            font-size: 28px;
+        }
+
+        .student1 {
+            flex-flow: column-reverse;
+            justify-content: center;
+            margin-bottom: 43px;
+
+            &__text {
+                width: 100%;
+                margin-bottom: 30px;
+
+                &::before {
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -15px;
+                    border-top: 15px solid $balloon-color;
+                    border-right: 15px solid transparent;
+                    border-left: 15px solid transparent;
+                }
+            }
+
+            &__unit {
+                width: 30%;
+                margin-right: 0;
+            }
+        }
+
+        .student2 {
+            flex-flow: column;
+            justify-content: center;
+            margin-bottom: 43px;
+
+            &__text {
+                width: 100%;
+                margin-bottom: 30px;
+
+                &::before {
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -15px;
+                    border-top: 15px solid $balloon-color;
+                    border-right: 15px solid transparent;
+                    border-left: 15px solid transparent;
+                }
+
+            }
+
+            &__unit {
+                width: 30%;
+                margin-left: 0;
+            }
+        }
+
+        .student3 {
+            flex-flow: column-reverse;
+            justify-content: center;
+            margin-bottom: 43px;
+
+            &__text {
+                width: 100%;
+                margin-bottom: 30px;
+
+                &::before {
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -15px;
+                    border-top: 15px solid $balloon-color;
+                    border-right: 15px solid transparent;
+                    border-left: 15px solid transparent;
+                }
+            }
+
+            &__unit {
+                width: 30%;
+                margin-right: 0;
+            }
+        }
+    }
+
+
+    /*----- outline -----*/
+
+    .outline {
+        &__title {
+            font-size: 28px;
+        }
+
+        &__list {
+            flex-flow: column;
+            justify-content: center;
+        }
+
+        &__item {
+            width: 100%;
+        }
+
+        &__heading {
+            font-size: 24px;
+        }
+    }
+
+
+    /*----- application -----*/
+    .application {
+        &__heading {
+            font-size: 24px;
+        }
+
+        &__text {
+            font-size: 16px;
+        }
+
+        &__btn {
+            font-size: 24px;
+        }
+    }
+
+    /*----- footer -----*/
+
+
+    .footer {
+        text-align: center;
+        padding-top: 62px;
+
+        &__unit {
+            flex-flow: column;
+        }
+    }
+}

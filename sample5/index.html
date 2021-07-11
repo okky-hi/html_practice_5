@@ -4,9 +4,210 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <meta name="description" content="話して学ぼう！BBB英会話スクール">
+    <title>BBB英会話スクール</title>
+    <link rel="stylesheet" href="destyle.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="header__logo">
+            <img src="img/logo-r.svg" class="header__img" alt="ロゴ">
+        </div>
+        <nav class="header__menu">
+            <ul class="header__list">
+                <li class="header__item">
+                    <a href="#reason">BBBが選ばれる理由</a>
+                </li>
+                <li class="header__item">
+                    <a href="#studentVoice">受講生の声</a>
+                </li>
+                <li class="header__item">
+                    <a href="#outline">スクールの概要</a>
+                </li>
+            </ul>
+            <a href="#" class="header__btn">無料体験に申し込む</a>
+        </nav>
+        <!--ハンバーガーメニューはタブレットのメディアクエリ記述時に作成-->
+    </header>
+
+    <main class="main">
+        <section class="mainVisual">
+            <div class="mainVisual__imgUnit">
+                <ul class="mainVisual__list">
+                    <li class="mainVisual__item">
+                        <img src="img/mainvisual1.jpg" class="mainVisual__img">
+                    </li>
+                    <li class="mainVisual__item">
+                        <img src="img/mainvisual2.jpg" class="mainVisual__img">
+                    </li>
+                    <li class="mainVisual__item">
+                        <img src="img/mainvisual3.jpg" class="mainVisual__img">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mainVisual__unit">
+                <h1 class="mainVisual__title">話して学ぼう！<br>BBB英会話スクール</h1>
+                <a href="#" class="mainVisual__btn">無料体験はこちら</a>
+            </div>
+        </section>
+
+        <section id="reason" class="reason">
+            <h2 class="reason__title">BBBが選ばれる理由</h2>
+            <div class="reason__unit">
+                <div class="reasonLeft">
+                    <img src="img/icon-pc.png" class="reasonLeft__img" alt="PCのイメージ画像">
+                    <div class="reasonLeft__unit">
+                        <h3 class="reasonLeft__heading">オンライン対応</h3>
+                        <p class="reasonLeft__text">24時間いつでも受講できる！</p>
+                    </div>
+                </div>
+
+                <div class="reasonRight">
+                    <img src="img/icon-teacher.png" class="reasonRight__img" alt="講師のイメージ画像">
+                    <div class="reasonRight__unit">
+                        <h3 class="reasonRight__heading">講師はネイティブ</h3>
+                        <p class="reasonRight__text">お気に入りの講師が自由に選べる！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="studentVoice" class="studentVoice">
+            <h2 class="studentVoice__title">受講生の声</h2>
+            <div class="student1">
+                <div class="student1__unit">
+                    <img src="img/icon-student1.png" class="student1__img" alt="受講生の写真">
+                    <p class="student1__name">田中さん<br>大学生</p>
+                </div>
+                <p class="student1__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            </div>
+
+            <div class="student2">
+                <p class="student2__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                <div class="student2__unit">
+                    <img src="img/icon-student2.png" class="student2__img" alt="受講生の写真">
+                    <p class="student2__name">鈴木さん<br>会社員</p>
+                </div>
+            </div>
+
+            <div class="student3">
+                <div class="student3__unit">
+                    <img src="img/icon-student3.png" class="student3__img" alt="受講生の写真">
+                    <p class="student3__name">佐藤さん<br>自営業</p>
+                </div>
+                <p class="student3__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            </div>
+        </section>
+
+        <section id="outline" class="outline">
+            <h2 class="outline__title">スクールの概要</h2>
+            <div class="outline__inner">
+                <ul class="outline__list">
+                    <li class="outline__item">
+                        <h3 class="outline__heading">レッスン内容<span class="outline__subheading">LESSON</span></h3>
+                        <p class="outline__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </li>
+
+                    <li class="outline__item">
+                        <h3 class="outline__heading">料金プラン<span class="outline__subheading">PRICE</span></h3>
+                        <p class="outline__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </li>
+
+                    <li class="outline__item">
+                        <h3 class="outline__heading">講師のご紹介<span class="outline__subheading">TEACHER</span></h3>
+                        <p class="outline__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </li>
+
+                    <li class="outline__item">
+                        <h3 class="outline__heading">BBBのQ&A<span class="outline__subheading">Q&A</span></h3>
+                        <p class="outline__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="application">
+            <h3 class="application__heading">まずは無料で、BBBの英会話を試してみませんか？</h3>
+            <p class="application__text">今なら初月のレッスンを特別価格で受講できる割引クーポンをプレゼント！</p>
+            <a href="#" class="application__btn">無料体験に申し込む</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__unit">
+            <div class="footer__menu">
+                <h3 class="footer__title">コース一覧</h3>
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="#">スタンダードプラン</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#">プレミアムプラン</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#">短期集中プラン</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#">日常英会話コース</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#">ビジネス英会話コース</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer__menu">
+                <h3 class="footer__title">講師紹介</h3>
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="#">講師について</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#">講師一覧</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#">講師を探す</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer__menu">
+                <h3 class="footer__title">会社情報</h3>
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="#">会社概要</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#">採用情報</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer__menu">
+                <h3 class="footer__title">BBBについて</h3>
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="#">よくあるご質問</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#">ご利用規約</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#">プライバシーポリシー</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#">お問い合わせ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer__copyright">
+            <p><small>© BBB English School</small></p>
+        </div>
+    </footer>
 </body>
 </html>
